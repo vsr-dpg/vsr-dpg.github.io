@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VSR-DPG: Vertical Symbolic Regression via Deep Policy Gradient">
+  <meta name="keywords" content="Robotic Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VSR-DPG</title>
+
+  
+
+  <script>
+
+    function updateInteractive() {
+      var task = document.getElementById("interative-menu").value;
+
+      console.log("interactive", task)
+
+      var video = document.getElementById("interactive-video1");
+      video.src = "assets/h3_vids/goal" + task + ".mp4";
+      video.play();
+
+      var video = document.getElementById("interactive-video2");
+      video.src = "assets/h3_vids/sketch" + task + ".mp4";
+      video.play();
+
+    }
+
+    function updateInteractiveSemantic() {
+      var task = document.getElementById("interative-semantic-menu").value;
+
+      console.log("interactive", task)
+
+      var video = document.getElementById("interactive-video-semantic-1");
+      video.src = "assets/h4_vids/" + task + "/semantic.mp4";
+      video.play();
+
+      var video = document.getElementById("interactive-video-semantic-2");
+      video.src = "assets/h4_vids/" + task + "/spatial.mp4";
+      video.play();
+
+    }
+
+
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body onload="updateInteractive();">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VSR-DPG: Vertical Symbolic Regression via Deep Policy Gradient</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://jiangnanhugo.github.io/about/">Nan Jiang,</a>
+              <a target="_blank" href="https://sites.google.com/site/mnasim018/">Md Nasim,</a>
+              <a target="_blank" href="https://www.cs.purdue.edu/homes/yexiang/">Yexiang Xue</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Department of Computer Science, Purdue University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+            <span class="link-block">
+                <a href="https://arxiv.org/abs/2309.07934.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/jiangnanhugo/VSR-DPG"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <img src="assets/vertical_path_demo.gif" style="width: 100%; height: auto;"/>
+          </br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Vertical Symbolic Regression (VSR) recently has been proposed to expedite the discovery of symbolic
+            equations with many independent variables from experimental data. VSR reduces the search spaces
+            following the vertical discovery path by building from reduced-form equations involving a subset of
+            independent variables to full-fledged ones. Proved successful by many symbolic regressors, deep neural
+            networks are expected to further scale up VSR. Nevertheless, directly combining VSR with deep neural
+            networks will result in difficulty in passing gradients and other engineering issues. We propose Vertical
+            Symbolic Regression using Deep Policy Gradient (VSR-DPG) and demonstrate that VSR-DPG can recover
+            ground-truth equations involving multiple input variables, significantly beyond both deep reinforcement
+            learning-based approaches and previous VSR variants. Our VSR-DPG models symbolic regression as a
+            sequential decision-making process, in which equations are built from repeated applications of grammar
+            rules. The integrated deep model is trained to maximize a policy gradient objective. Experimental results
+            demonstrate that our VSR-DPG significantly outperforms popular baselines in identifying both algebraic
+            equations and ordinary differential equations on a series of benchmarks.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <!--/ Abstract. -->
+
+  </div>
+
+</section>
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/rt-sketch/rt-sketch.github.io">RT-Sketch</a>, <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a href="https://peract.github.io/">PerAct</a> and <a href="https://voxposer.github.io">VoxPoser</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
